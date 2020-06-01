@@ -22,7 +22,7 @@ class Approve extends XFCP_Approve
             'user_id' => $update->Resource->user_id
         ])->fetchOne();
 
-        // Approve resource's associated thread if unapproved
+        // Approve resource update's associated post if unapproved
         if($post->message_state == 'moderated'){
             /** @var \XF\Service\Post\Approver $postApprover */
             $postApprover = \XF::service('XF:Post\Approver', $post);
