@@ -10,6 +10,11 @@ class Approve extends XFCP_Approve
 
         $update = $this->update;
 
+        $this->approveDiscussionThreadPost($update);
+    }
+
+    protected function approveDiscussionThreadPost($update)
+    {
         // TODO: find more solid way of finding the update's post in discussion thread
         $post = \XF::finder('XF:Post')->where([
             'thread_id' => $update->Resource->discussion_thread_id,
