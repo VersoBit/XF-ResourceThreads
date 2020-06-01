@@ -6,6 +6,7 @@
 namespace VersoBit\ResourceThreads\XFRM\Service\ResourceItem
 {
 	class XFCP_Approve extends \XFRM\Service\ResourceItem\Approve {}
+	class XFCP_Delete extends \XFRM\Service\ResourceItem\Delete {}
 }
 
 namespace VersoBit\ResourceThreads\XFRM\Service\ResourceUpdate
