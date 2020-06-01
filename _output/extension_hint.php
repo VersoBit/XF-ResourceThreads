@@ -7,3 +7,8 @@ namespace VersoBit\ResourceThreads\XFRM\Service\ResourceItem
 {
 	class XFCP_Approve extends \XFRM\Service\ResourceItem\Approve {}
 }
+
+namespace VersoBit\ResourceThreads\XFRM\Service\ResourceUpdate
+{
+	class XFCP_Approve extends \XFRM\Service\ResourceUpdate\Approve {}
+}
