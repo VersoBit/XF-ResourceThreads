@@ -10,6 +10,11 @@ class Approve extends XFCP_Approve
 
         $resource = $this->resource;
 
+        $this->approveDiscussionThread($resource);
+    }
+
+    protected function approveDiscussionThread($resource)
+    {
         // Approve resource's associated thread if unapproved
         if($resource->Discussion->discussion_state == 'moderated'){
             /** @var \XF\Service\Thread\Approver $threadApprover */
