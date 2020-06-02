@@ -2,7 +2,13 @@
     "XFRM-Service-ResourceItem-Approve_VersoBit-ResourceThreads-XFRM-Service-ResourceItem-Approve.json": {
         "hash": "cdfaed7d91dfcfaf74f6b212e3d99163"
     },
+    "XFRM-Service-ResourceItem-Delete_VersoBit-ResourceThreads-XFRM-Service-ResourceItem-Delete.json": {
+        "hash": "1f67763978dcd836228611359811d33d"
+    },
     "XFRM-Service-ResourceUpdate-Approve_VersoBit-ResourceThreads-XFRM-Service-ResourceUpdate-Approve.json": {
         "hash": "e29932c9936103688bbc6ec3f8b40c07"
+    },
+    "XFRM-Service-ResourceUpdate-Delete_VersoBit-ResourceThreads-XFRM-Service-ResourceUpdate-Delete.json": {
+        "hash": "0aaf2bbb43c667649945ed12a0f72082"
     }
 }

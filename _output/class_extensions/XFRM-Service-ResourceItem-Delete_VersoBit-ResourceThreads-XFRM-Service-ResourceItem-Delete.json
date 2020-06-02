@@ -1,0 +1,6 @@
+{
+    "from_class": "XFRM\\Service\\ResourceItem\\Delete",
+    "to_class": "VersoBit\\ResourceThreads\\XFRM\\Service\\ResourceItem\\Delete",
+    "execute_order": 10,
+    "active": true
+}

@@ -2,18 +2,20 @@
 
 namespace VersoBit\ResourceThreads\XFRM\Service\ResourceUpdate;
 
-class Approve extends XFCP_Approve
+class Delete extends XFCP_Delete
 {
-    protected function onApprove()
+    public function delete($type, $reason = '')
     {
-        parent::onApprove();
+        $result = parent::delete($type, $reason = '');
 
         $update = $this->update;
 
-        $this->approveDiscussionThreadPost($update);
+        $this->deleteDiscussionThreadPost($update);
+
+        return $result;
     }
 
-    protected function approveDiscussionThreadPost($update)
+    protected function deleteDiscussionThreadPost($update)
     {
         // TODO: find more solid way of finding the update's post in discussion thread
         $updateUrl = '%resources/'. strtolower($update->title) .'.'. $update->Resource->resource_id .'/update/'. $update->resource_update_id .'/%';
@@ -23,11 +25,11 @@ class Approve extends XFCP_Approve
             ['message', 'LIKE', $updateUrl]
         ])->fetchOne();
 
-        // Approve resource update's associated post if unapproved
-        if($post AND $post->message_state == 'moderated'){
-            /** @var \XF\Service\Post\Approver $postApprover */
-            $postApprover = \XF::service('XF:Post\Approver', $post);
-            $postApprover->approve();
+        // Delete resource update's post if was unapproved
+        if($post->message_state == 'moderated'){
+            /** @var \XF\Service\Post\Deleter $postDeleter */
+            $postDeleter = $this->service('XF:Post\Deleter', $post);
+            $postDeleter->delete('soft', \XF::phrase('xfrm_resource_update').' deleted');
         }
     }
 }
