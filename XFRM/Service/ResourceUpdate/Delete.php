@@ -6,7 +6,7 @@ class Delete extends XFCP_Delete
 {
     public function delete($type, $reason = '')
     {
-        $result = parent::delete($type, $reason = '');
+        $result = parent::delete($type, $reason);
 
         $update = $this->update;
 
