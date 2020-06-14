@@ -25,8 +25,8 @@ class Delete extends XFCP_Delete
             ['message', 'LIKE', $updateUrl]
         ])->fetchOne();
 
-        // Delete resource update's post if was unapproved
-        if($post->message_state == 'moderated'){
+        // Delete resource update's post if unapproved
+        if($post AND $post->message_state == 'moderated'){
             /** @var \XF\Service\Post\Deleter $postDeleter */
             $postDeleter = $this->service('XF:Post\Deleter', $post);
             $postDeleter->delete('soft', \XF::phrase('xfrm_resource_update').' deleted');
